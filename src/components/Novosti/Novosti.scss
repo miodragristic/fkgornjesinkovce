@@ -1,0 +1,128 @@
+@import '/src/styles/variables';
+
+.news-container {
+  .news-header {
+    text-align: center;
+    margin-bottom: 100px;
+
+    h1 {
+      font-size: 2em;
+      color: #000; // Adjust color as needed
+      position: relative;
+      padding-bottom: 10px;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 360px; // Adjust width as needed
+        height: 5px;
+        background-color: #f06292; // Pink color
+        position: absolute;
+        bottom: 10px; // Ensure it's in pixels
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // 4 columns
+    gap: 15px;
+    justify-content: center; // Center the grid items horizontally
+    max-width: 1440px; // Adjust the max-width as needed to center the grid within the container
+    margin: 0 auto; // Center the grid container itself
+
+    .news-item {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+
+      .news-content {
+        padding: 10px;
+
+        h2 {
+          font-size: 1.5em;
+          margin: 0;
+          color: #000;
+          position: relative;
+          padding-bottom: 10px; // Add space for the line
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px; // Line thickness
+            background-color: #f06292; // Pink color
+            position: absolute;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        p {
+          margin: 20px 0 0;
+          color: #555;
+        }
+      }
+    }
+  }
+
+  .show-more-news {
+    text-align: center;
+    margin: 80px 0;
+
+    .btn {
+      padding: 10px 20px;
+      background: $black-color;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background: $dark-gray-color;
+      }
+    }
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .pink-line {
+    width: 100%; // Adjust width as needed
+    height: 5px; // Line height
+    background-color: #f06292; // Pink color
+    margin-bottom: 20px; // Space between line and title
+    margin-top: 80px;
+    animation: expandLine 12s ease forwards;
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    .news-grid {
+      grid-template-columns: 1fr; // 1 column for small screens
+      gap: 20px; // Increase gap for better spacing on small screens
+    }
+  }
+}

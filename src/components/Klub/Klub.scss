@@ -1,0 +1,140 @@
+.klub-container {
+  position: relative; /* Omogućava da apsolutno pozicionirani elementi pravilno funkcionišu */
+  padding-bottom: 200px; /* Obezbeđuje prostor za footer, prilagodite prema potrebi */
+
+  .top-section {
+    width: 100%;
+
+    .top-image {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .text-section {
+      padding: 20px;
+      background-color: #f4f4f4;
+      text-align: center;
+
+      p {
+        margin: 0;
+        font-size: 18px;
+        color: #333;
+      }
+    }
+  }
+
+  .timeline-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+    position: relative; /* Omogućava da se pink-line i flip-card pravilno pozicioniraju unutar ovog elementa */
+
+    h1 {
+      font-size: 2em;
+      color: #000;
+      position: relative;
+      padding: 20px 0;
+      text-align: center;
+      margin-bottom: 120px;
+
+      &::after {
+        content: '';
+        display: block;
+        width: 360px;
+        height: 5px;
+        background-color: #f06292;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .decade {
+      margin-bottom: 20px;
+
+      h3 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .year-event {
+        margin-bottom: 10px;
+        padding-left: 20px;
+        border-left: 2px solid #ccc;
+
+        .year {
+          font-weight: bold;
+          color: #666;
+        }
+
+        p {
+          margin: 5px 0;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .pink-line {
+    width: 100%;
+    height: 5px;
+    background-color: #f06292;
+    margin: 20px 0; /* Povećajte razmak ako je potrebno */
+    animation: expandLine 12s ease forwards;
+  }
+
+  .flip-card-container {
+    display: flex;
+    flex-wrap: wrap; /* Omogućava prelazak na novi red ako nema dovoljno prostora */
+    gap: 20px; /* Razmak između flip-card elemenata */
+    justify-content: center; /* Centriranje flip-card elemenata */
+    margin-top: 60px; /* Razmak od pink-line */
+  }
+
+  .flip-card {
+    background-color: transparent;
+    width: 450px;
+    height: 320px;
+    perspective: 1000px;
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 1.0s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .flip-card-front {
+        background-color: #2980b9;
+        z-index: 2;
+        transform: rotateY(0deg);
+      }
+
+      .flip-card-back {
+        background-color: #e74c3c;
+        transform: rotateY(180deg);
+        padding: 20px;
+      }
+    }
+  }
+}

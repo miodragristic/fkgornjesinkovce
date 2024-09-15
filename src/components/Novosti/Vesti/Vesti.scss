@@ -1,0 +1,146 @@
+.article-title {
+  font-size: 38px; // Veliki font za naslov
+  font-weight: bold; // Bold za isticanje
+  margin-bottom: 20px; // Razmak ispod naslova
+  color: black;
+}
+
+.article-section {
+  max-width: 1200px; // Maksimalna širina sekcije
+  margin: 0 auto; // Centralizovano postavljanje
+  padding: 30px; // Razmak unutar sekcije
+  background-color: white; // Svetla pozadina
+  color: #101316; // Boja teksta
+
+  .article-content {
+    padding: 5px; // Unutrašnji razmak
+    margin-top: 10px;
+
+    .article-date {
+      font-size: 14px; // Manji font za datum
+      color: gray; // Siva boja za datum
+      margin-bottom: 0px; // Razmak ispod datuma
+    }
+
+    .article-title {
+      font-size: 38px; // Veliki font za naslov
+      font-weight: bold; // Bold za isticanje
+      margin-bottom: 70px; // Razmak ispod naslova
+      color: black;
+    }
+
+    .article-image {
+      width: 100%;
+      height: auto; // Održava proporcije slike
+      margin-bottom: 20px; // Razmak ispod slike
+    }
+
+    .article-quote {
+      font-size: 20px; // Standardni font za citate
+      line-height: 1.4; // Razmak između redova
+      margin-bottom: 8px; // Razmak ispod svakog citata
+    }
+
+    h3 {
+      margin-top: 20px; // Razmak iznad naslova za raspored utakmica
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  // Media queries za responzivnost
+
+  @media (max-width: 1024px) {
+    .article-title {
+      font-size: 32px; // Smanji veličinu naslova na tabletima
+      margin-bottom: 50px;
+    }
+
+    .article-date {
+      font-size: 13px; // Smanji veličinu fonta za datum na tabletima
+      margin-bottom: 10px; // Razmak ispod datuma
+    }
+
+    .article-image {
+      width: 90%; // Smanji širinu slike na tabletima
+      margin-bottom: 15px; // Manji razmak ispod slike
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px; // Smanji padding za manje ekrane
+
+    .article-title {
+      font-size: 28px; // Smanji veličinu naslova na mobilnim uređajima
+      margin-bottom: 30px;
+    }
+
+    .article-date {
+      font-size: 12px; // Manji font za datum na manjim ekranima
+      margin-bottom: 10px;
+    }
+
+    .article-image {
+      width: 100%; // Podesi širinu slike na punu širinu mobilnog ekrana
+      margin-bottom: 10px; // Manji razmak ispod slike
+    }
+
+    .article-quote {
+      font-size: 18px; // Smanji font za citate
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px; // Još manji padding za najmanje ekrane
+
+    .article-title {
+      font-size: 22px; // Najmanji font za naslov na vrlo malim ekranima
+      margin-bottom: 20px;
+    }
+
+    .article-date {
+      font-size: 11px; // Još manji font za datum
+      margin-bottom: 10px;
+    }
+
+    .article-image {
+      width: 100%; // Podesi širinu slike na punu širinu ekrana
+      height: auto; // Održava proporcije slike
+      margin-bottom: 10px; // Manji razmak ispod slike
+      display: block; // Osiguraj da je slika blok element
+      margin-left: auto; // Centriraj sliku
+      margin-right: auto; // Centriraj sliku
+    }
+
+    .article-quote {
+      font-size: 16px; // Dodatno smanjenje fonta za citate
+      line-height: 1.3; // Blago smanji razmak između redova
+    }
+
+    .schedule-table {
+      font-size: 14px; // Smanji font u tabeli
+      th, td {
+        padding: 6px; // Smanji padding unutar ćelija tabele
+      }
+    }
+  }
+}

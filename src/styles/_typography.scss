@@ -1,0 +1,68 @@
+$base-font-size: 15px;
+$base-line-height: 25px;
+
+$h1-font-size: 56px;
+$h1-line-height: 58px;
+$h1-letter-spacing: 2px;
+
+
+$h2-font-size: 48px;
+$h2-line-height: 50px;
+$h2-letter-spacing: 1px;
+
+$h3-font-size: 36px;
+$h3-line-height: 38px;
+$h3-letter-spacing: 0.5px;
+
+$h4-font-size: 24px;
+$h4-line-height: 26px;
+$h4-letter-spacing: 0;
+
+$h5-font-size: 20px;
+$h5-line-height: 22px;
+$h5-letter-spacing: 0;
+
+$h6-font-size: 16px;
+$h6-line-height: 18px;
+$h6-letter-spacing: 0;
+
+
+h1,h2,h3,h4,h5,h6 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+}
+
+h2 {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+    letter-spacing: $h2-letter-spacing;
+}
+
+h3 {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    letter-spacing: $h3-letter-spacing;
+}
+
+h4 {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+    letter-spacing: $h4-letter-spacing;
+}
+
+h5 {
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
+    letter-spacing: $h5-letter-spacing;
+}
+
+h6 {
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
+    letter-spacing: $h6-letter-spacing;
+}

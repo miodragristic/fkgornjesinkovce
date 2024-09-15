@@ -1,0 +1,592 @@
+@import '/src/styles/variables';
+
+.home {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .slide {
+    position: relative;
+    text-align: center;
+
+    .slide-content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 520px; // Povećana visina diva za slike
+    }
+
+    .slide-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+
+      // Stilovi za ekrane šire od 1200px
+      @media (max-width: 1200px) {
+        width: 1000px;
+        height: 765px;
+        object-fit: cover;
+      }
+      @media (max-width: 820px) {
+        width: 800px;
+        height: 765px;
+        object-fit: cover;
+      }
+
+      // Stilovi za ekrane do 768px
+      @media (max-width: 768px) {
+        width: 100%;
+        max-height: 500px;
+        object-fit: cover;
+        margin-top: 10px;
+      }
+
+      // Stilovi za ekrane ispod 480px
+      @media (max-width: 480px) {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        margin-top: 10px;
+      }
+    }
+  
+    .slide-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      color: $white-color; // Proveri kontrast boje
+      padding: 10px 20px;
+      font-size: 50px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: pre-wrap;
+      z-index: 10; // Dodaj viši z-index ako se preklapa
+    
+      @media (max-width: 768px) {
+        font-size: 30px;
+        padding: 100px 10px;
+        color: $white-color; // Proveri kontrast boje u manjim ekranima
+      }
+    
+      @media (max-width: 480px) {
+        font-size: 20px;
+        padding: 5px 8px;
+        color: $black-color; 
+        // Proveri kontrast boje u vrlo malim ekranima
+      }
+    
+      // Dodaj za z-index da osiguraš da je iznad drugih elemenata
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 9; // Proveri da li je ovo možda ispod elemenata gde treba
+      }
+    }
+
+    // Responsive media query za podizanje elemenata na gore
+    @media (max-width: 768px) {
+      .slide-content {
+        margin-top: -140px;
+      }
+
+      .slide-image {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  // .slick-dots {
+  //   position: absolute;
+  //   bottom: 50px;
+  //   display: flex !important;
+  //   justify-content: center;
+  //   padding: 0;
+  //   margin: 0;
+  //   list-style: none;
+  //   z-index: 10;
+
+  //   @media (max-width: 480px) {
+  //     padding: auto;
+  //     top: 250px;
+  //   }
+
+  //   li {
+  //     width: 25px;
+  //     height: 25px;
+  //     margin: 0 5px;
+  //     background-color: $light-gray-color;
+  //     border-radius: 0;
+  //     transition: background-color $transition, transform $transition;
+
+  //     button {
+  //       width: 100%;
+  //       height: 100%;
+  //       padding: 0;
+  //       border: none;
+  //       background: transparent;
+
+  //       &:before {
+  //         content: '';
+  //         display: block;
+  //         width: 100%;
+  //         height: 100%;
+  //         background-color: inherit;
+  //         border-radius: inherit;
+  //       }
+  //     }
+
+  //     &.slick-active {
+  //       background-color: $blue-color;
+  //       transform: scale(1.2);
+  //     }
+  //   }
+  // }
+  
+
+
+  .slick-dots {
+    bottom: 65px; // Podešavanje udaljenosti linija od dna
+    display: flex !important;
+    justify-content: center;
+    padding: 0;
+
+    li {
+      width: 300px; // Širina linija indikatora
+      height: 3px; // Visina linija indikatora
+      margin: 0 10px; // Razmak između linija
+      background-color: $light-gray-color; // Početna boja linija
+      transition: background-color 0.3s, transform 0.3s; // Dodavanje tranzicije za transformaciju
+      animation: colorChange 2s ease-in-out infinite; // Dodaj animaciju ovde
+
+      &:hover {
+        transform: scale(1.1); // Efekat približavanja kada se pređe mišem
+      }
+
+      &.slick-active {
+        background-color: $white-color; // Boja aktivne linije
+      }
+
+      button {
+        width: 100%;
+        height: 100%;
+        opacity: 0; // Sakrivanje originalnih tačkica
+        cursor: pointer;
+      
+    }
+    @media (max-width: 480px) {
+          padding: auto;
+          top: -50px;
+   
+  }}} 
+
+  .slick-prev,
+  .slick-next {
+    position: absolute; // Pozicioniranje strelica apsolutno
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white-color;
+    cursor: pointer;
+    z-index: 1; // Postavljanje z-index-a za strelice
+
+  
+    &:before {
+      font-size: 40px; // Veličina ikonice
+      color: $white-color; // Boja ikonice
+    }
+    @media (max-width: 480px) {
+      .slick-prev,
+      .slick-next {
+        display: none;
+      }}
+  }
+  
+  .slick-prev {
+    left: 20px; // Položaj strelice za prethodni slajd
+  }
+  
+  .slick-next {
+    right: 50px; // Položaj strelice za sledeći slajd
+  }
+  
+  // Sakrij strelice za ekrane šire od 1200px
+  @media (max-width: 1200px) {
+    .slick-prev,
+    .slick-next {
+      display: none;
+    }
+  }
+  
+
+
+  .news-section {
+    margin-top: 10px;
+    padding: 0; // Uklonjen padding
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+
+    h2,
+    p {
+      text-align: center;
+    }
+
+    .news-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      width: calc(25% - 20px); // Prilagođeno za 4 elementa po slajdu
+      box-sizing: border-box;
+
+      @media (max-width: 1024px) {
+        width: calc(50% - 20px); // Prilagođeno za 2 elementa po slajdu
+      }
+
+      @media (max-width: 600px) {
+        width: calc(100% - 20px); // Prilagođeno za 1 element po slajdu
+      }
+
+      .news-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .news-title {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+    .match-slider-container {
+    .slick-slide {
+      display: flex;
+      justify-content: center;
+      margin-left: -2px;
+    }
+
+    .match-card {
+      background-color: $white-color;
+      border: 1px solid #eaeaea; // Sivi okvir oko kartice
+      border-radius: 10px; // Zaobljeni uglovi
+      padding: 20px; // Unutrašnje margine
+      margin: 10px; // Razmak između kartica
+      text-align: center; // Poravnanje teksta na sredinu
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      .match-card-content {
+        padding: 24px;
+
+        .match-stadium {
+          margin-bottom: 20px; // Razmak između stadiona i imena timova
+          text-align: center; // Centriranje teksta horizontalno
+          width: 100%; // Širina teksta da bude ceo prostor kartice
+          align-self: center; // Centriranje teksta horizontalno
+          font-size: 16px; // Veličina fonta za stadion
+          color: #333; // Boja teksta
+          font-weight: bold; // Podebljanje fonta
+          margin-top: 10px; // Razmak od vrha kartice
+        }
+  
+
+        .match-logos {
+          display: flex;
+          justify-content: space-between; // Raspoređuje logotipe sa prostora između njih
+          align-items: center;
+          margin-bottom: 20px; // Razmak između logotipa i ostalog sadržaja
+
+          img {
+            width: 40px; // Širina logoa
+            height: 40px; // Visina logoa
+            object-fit: contain; // Održava proporcije slike
+          }
+        }
+        
+
+        
+        p {
+          margin: 10px 0;
+          font-size: 18px;
+          border-top: 3px solid  #f06292;
+          color: #333; // Tamno siva boja za tekst
+        }
+
+        .match-teams {
+          display: flex;
+          flex-direction: column; // Postavlja timove i "vs" jedan ispod drugog
+          align-items: center; // Centriranje teksta horizontalno
+        
+          .home-team {
+            margin-bottom: 5px; // Razmak između domaćeg tima i "vs"
+            font-size: 25px; // Veličina fonta za domaći tim
+            text-transform: uppercase;
+            font-weight: bold;
+            
+          }
+
+          .match-result {
+            display: flex; /* Koristi flexbox za raspoređivanje elemenata u redu */
+            align-items: center; /* Vertikalno centriranje elemenata */
+            justify-content: center; /* Horizontalno centriranje elemenata */
+            gap: 20px; /* Razmak između elemenata (možete prilagoditi vrednost) */
+          }
+        
+          .vs {
+            margin: 3px 0; // Razmak između "vs" i imena timova
+            font-size: 15px; // Veličina fonta za "vs"
+          }
+
+          .home-result {
+            display: inline-block;  
+            font-size: 25px;
+            font-weight: bold;
+            
+          }
+          
+          .away-result {
+            display: inline-block;  
+            font-size: 25px;
+            font-weight: bold;
+          }
+        
+          .away-team {
+            margin-top: 3px; // Razmak između "vs" i gostujućeg tima
+            font-size: 25px; // Veličina fonta za domaći tim
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+        }
+
+        .match-centre-btn {
+          display: inline-block;
+          padding: 10px 20px;
+          border: none;
+          background-color: #000; // Crna pozadina dugmeta
+          color: #fff; // Bela boja teksta
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: #333; // Tamnija crna pri prelazu mišem
+          }
+        }
+      }
+
+      img {
+        width: 50px; // Širina logoa
+        height: 50px; // Visina logoa
+        margin: 10px 0;
+      }
+    }
+
+    .slick-dots {
+      bottom: 10px; // Položaj tačkica za navigaciju
+    }
+
+    .slick-prev,
+    .slick-next {
+      z-index: 1; // Osigurava da strelice budu iznad sadržaja
+    }
+
+    .slick-prev {
+      left: 10px;
+      &:before {
+        font-size: 24px; // Veličina strelice
+        color: #000; // Boja strelice
+      }
+    }
+
+    .slick-next {
+      right: 10px;
+      &:before {
+        font-size: 24px; // Veličina strelice
+        color: #000; // Boja strelice
+      }
+    }
+  }
+
+  @keyframes expandLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  .pink-line {
+    width: 100%; // Možeš prilagoditi širinu po potrebi
+    height: 5px; // Visina linije
+    background-color: #f06292; // Roze boja
+    margin-bottom: 20px; // Razmak između linije i naslova
+    margin-top: 80px;
+    animation: expandLine 12s ease forwards;
+  }
+  
+
+  .latest-news-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: $black-color;
+    margin-bottom: 10px;
+    margin-left: 60px;
+    margin-top: 90px;
+  }
+
+
+  .news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  
+    .news-item {
+      flex: 1 1 calc(33.333% - 20px);
+      max-width: calc(33.333% - 20px);
+      background: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+     
+  
+      .news-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+    
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+  
+      .news-content {
+        padding: 15px;
+  
+        .news-title {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px;
+          color: #333;
+        }
+  
+        .news-date {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  
+    .show-more-news {
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+  
+      .btn {
+        padding: 10px 20px;
+        background: $black-color;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+  
+        &:hover {
+          background: $dark-gray-color;
+        }
+      }
+  
+      .news-content {
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.03);
+  
+        .news-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+          margin: 10px 0;
+          color: #333;
+        }
+  
+        .news-date {
+          font-size: 0.9rem;
+          color: #666;
+        }
+      }
+    }
+  
+    .show-more-news {
+      text-align: center;
+      margin-top: 30px;
+  
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: $black-color;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: $dark-gray-color;
+        }
+      }
+    }
+  
+    /* Medium devices (Tablets, 768px and up) */
+    @media (max-width: 1024px) {
+      .news-item {
+        flex: 1 1 calc(50% - 20px); /* 2 u redu sa razmakom */
+        max-width: calc(50% - 20px); /* 2 u redu sa razmakom */
+      }
+  
+      .news-image {
+        height: 250px; /* Smanjena visina slike za manje ekrane */
+      }
+    }
+  
+    /* Small devices (Mobiles, 600px and below) */
+    @media (max-width: 768px) {
+      .news-item {
+        flex: 1 1 100%; /* 1 u redu sa punom širinom */
+        max-width: 100%; /* 1 u redu sa punom širinom */
+      }
+      
+      .news-image {
+        height: 200px; /* Prilagođena visina slike za manje ekrane */
+      }
+    }
+  }
+  
+
+}

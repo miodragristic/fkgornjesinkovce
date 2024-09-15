@@ -1,0 +1,132 @@
+@import '/src/styles/variables';
+
+.footer {
+  margin-top: 0px;
+  background-color: black; // Pozadinska boja
+  padding: 20px;
+  text-align: center;
+  color: white;
+  
+  .footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    img {
+      margin: 10px;
+      width: 300px; // Širina slike
+      height: 200px; // Visina slike
+      object-fit: cover; // Sadržaj slike će biti pokriven unutar datih dimenzija
+    }
+
+    a {
+      color: white; // Boja ikonica
+      font-size: 24px; // Veličina ikonica
+      margin: 0 10px; // Razmak između ikonica
+      transition: color 0.3s, transform 0.3s; // Tranzicija za promenu boje i efekat približavanja
+
+      &:hover {
+        color: #f0f0f0; // Boja ikonica pri prelazu mišem
+        transform: scale(1.1); // Efekat približavanja pri prelazu mišem
+      }
+    }
+  }
+}
+
+// Responsive stilovi
+@media (max-width: 992px) {
+  .footer-logos {
+    img {
+      width: 150px; // Smanji veličinu logotipa za manje tablete
+      margin: 5px; // Smanji razmak između logotipa
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-logos {
+    justify-content: space-around;
+    img {
+      width: 100px; // Smanji veličinu logotipa za mobilne uređaje
+      margin: 5px; // Smanji razmak između logotipa
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-logos {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    img {
+      width: 70px; // Dalje smanjenje veličine logotipa
+      margin: 5px 0; // Smanjuje vertikalni razmak
+    }
+  }
+}
+
+.footer-bottom {
+  margin-bottom: 30px;
+  
+  p {
+    margin: 0;
+    font-weight: bold;
+    color: white;
+  }
+
+  div {
+    margin-top: 10px;
+
+    a {
+      color: $white-color;
+      margin: 0 10px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    img {
+      max-width: 100px; /* Opšta veličina za sve slike */
+      margin: 10px;
+
+      &.small-logo {
+        max-width: 70px; /* Smanjena veličina za specifične slike */
+      }
+    }
+
+    @media (max-width: 1200px) {
+      img {
+        max-width: 90px; /* Smanjena veličina za veće tablete */
+      }
+    }
+
+    @media (max-width: 992px) {
+      img {
+        max-width: 80px; /* Smanjena veličina za manje tablete */
+      }
+    }
+
+    @media (max-width: 768px) {
+      img {
+        max-width: 70px; /* Smanjena veličina za mobilne uređaje */
+      }
+    }
+
+    @media (max-width: 576px) {
+      img {
+        max-width: 60px; /* Još manja veličina za veoma male ekrane */
+      }
+    }
+  }
+}

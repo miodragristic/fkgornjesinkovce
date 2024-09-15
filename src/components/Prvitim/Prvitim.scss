@@ -1,0 +1,133 @@
+@import '/src/styles/variables';
+
+.prvitim {
+  text-align: center;
+  background-color: $white-color;
+  
+
+  h1 {
+    font-size: 2em;
+    color: #000; // Adjust color as needed
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 360px; // Adjust width as needed
+      height: 5px;
+      background-color: #f06292; // Pink color
+      position: absolute;
+      bottom: 10px; // Ensure it's in pixels
+      left: 50%;
+      transform: translateX(-50%);
+    }}
+
+  .player-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px; // Razmak između kartica
+    max-width: 1380px;
+    margin: 0 auto;
+    padding-top: 100px;
+    
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .player-card {
+    position: relative; // Omogućava apsolutno pozicioniranje ::after pseudo-elementa
+    overflow: hidden; // Sakriva sve što izlazi van granica kartice
+    background: $light-gray-color; // Pozadina kartice (ako je potrebno)
+    border: 0 100px solid $gray-color; // Okvir oko kartice
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease; // Tranzicije za hover efekat
+    cursor: pointer;
+  
+    &:hover {
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      border-color: #f06292; // Promena boje okvira na hover
+      background: $white-color; // Zatamnjenje sa poluprozirnom crnom bojom na hover
+    }
+  
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: opacity 0.3s ease; // Tranzicija za promenu opaciteta
+  
+      &::after {
+        content: ''; // Obavezno dodaj ovu liniju
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); // Zatamnjenje sa poluprozirnom crnom bojom
+        opacity: 0; // Početno nevidljiv
+        transition: opacity 0.3s ease; // Tranzicija za promenu opaciteta
+        z-index: 1; // Postavi sloj iznad slike
+      }
+  
+      &:hover::after {
+        opacity: 1; // Vidljivost sloja na hover
+      }
+    }
+  }
+  
+
+    .player-info {
+      padding: 1px;
+      text-align: center;
+      background: $white-color;
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 10px0 0 5px;
+        color: $black-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: $transition;
+        font-size: 2rem;
+        color: $black-color;
+        font-weight: bold;
+        margin-top: -8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+
+        &:hover {
+          color: $dark-gray-color;
+        }
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: -20px 0 5px;
+        color: $black-color;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-top: 4px solid  #f06292; // Linija između imena i broja
+        transition: $transition;
+      }
+    }
+    .pink-line {
+      width: 100%; // Adjust width as needed
+      height: 5px; // Line height
+      background-color: #f06292; // Pink color
+      margin-bottom: 20px; // Space between line and title
+      margin-top: 80px;
+      animation: expandLine 12s ease forwards;
+    }
+  }
+

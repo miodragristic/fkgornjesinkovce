@@ -1,0 +1,216 @@
+@import '/src/styles/variables'; // Uvezi SCSS varijable
+
+.match-details-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  margin-right: 60px;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #222;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 360px;
+      height: 5px;
+      background-color: #f06292;
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .match-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 800px;
+    background: $white-color;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+
+    .team-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .team-logo {
+        width: 80px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .team-name {
+        font-weight: bold;
+        font-size: 18px;
+        color: #444;
+        text-align: center;
+      }
+    }
+
+    .match-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 20px;
+
+      .match-date {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .vs {
+        font-size: 24px;
+        font-weight: bold;
+        margin: 10px 0;
+      }
+
+      .stadium,
+      .league {
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+      }
+
+      .league {
+        font-weight: bold;
+        color: $black-color;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #333;
+    }
+  }
+
+  // Responzivni stilovi
+  @media (max-width: 1024px) {
+    padding: 20px;
+
+    h1 {
+      font-size: 22px;
+
+      &::after {
+        width: 300px;
+        bottom: -15px;
+      }
+    }
+
+    .match-info {
+      flex-direction: row;
+      width: 90%;
+      padding: 15px;
+
+      .team-info,
+      .match-center {
+        margin: 10px 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    h1 {
+      font-size: 20px;
+
+      &::after {
+        width: 200px;
+        bottom: -10px;
+      }
+    }
+
+    .match-info {
+      width: 100%;
+      padding: 10px;
+      box-shadow: none;
+
+      .team-logo {
+        width: 60px;
+      }
+
+      .team-name,
+      .match-center {
+        font-size: 16px;
+      }
+
+      .vs {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    h1 {
+      font-size: 18px;
+
+      &::after {
+        width: 100px;
+        bottom: -8px;
+      }
+    }
+
+    .match-info {
+      flex-direction: row;
+      width: 100%;
+      padding: 50px;
+      border-radius: 5px;
+
+      .team-info,
+      .match-center {
+        align-items: center;
+
+        .team-logo {
+          width: 50px;
+          flex-direction: row;
+        }
+
+        .team-name,
+        .match-date,
+        .stadium,
+        .league {
+          font-size: 12px;
+        }
+
+        .vs {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .back-btn {
+      font-size: 12px;
+      padding: 8px 16px;
+    }
+  }
+}

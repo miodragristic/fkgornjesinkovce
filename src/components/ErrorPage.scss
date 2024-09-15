@@ -1,0 +1,33 @@
+@import '/src/styles/variables'; // Uvezi SCSS varijable
+
+.error-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    color: $black-color;
+  
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+  
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .home-link {
+      text-decoration: none;
+      color: $blue-color;
+      font-weight: bold;
+      transition: color $transition;
+  
+      &:hover {
+        color: $dark-gray-color;
+      }
+    }
+  }
+  

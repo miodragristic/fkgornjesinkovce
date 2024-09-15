@@ -1,0 +1,111 @@
+@import '/src/styles/variables'; // Uvezi SCSS varijable
+
+.kontakt-container {
+  text-align: center;
+  background-color: $white-color;
+
+  h1 {
+    font-size: 2em;
+    color: #000; // Adjust color as needed
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 360px; // Adjust width as needed
+      height: 5px;
+      background-color: #f06292; // Pink color
+      position: absolute;
+      bottom: 10px; // Ensure it's in pixels
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  .logo {
+    background-color: $white-color;
+    margin-top: -90px;
+    margin-bottom: 110px;
+    padding: 20px;
+    width: 440px; // Original width
+
+    // Responsive adjustments for mobile
+    @media (max-width: 480px) {
+      width: 80%; // Reduce width for mobile devices
+      margin-top: -50px;
+      margin-bottom: 60px;
+      padding: 15px; // Adjust padding
+    }
+  }
+
+  .kontakt-info {
+    background-color: $white-color;
+    margin-top: 110px;
+    margin-bottom: 110px;
+
+    h2 {
+      color: $black-color;
+      font-size: 2rem;
+      margin-bottom: 1px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: $black-color; // Postavi boju linkova
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    // Responsive adjustments for mobile
+    @media (max-width: 480px) {
+      margin-top: 60px;
+      margin-bottom: 60px;
+
+      h2 {
+        font-size: 1.5rem; // Reduce font size for headers
+      }
+
+      p {
+        font-size: 1rem; // Slightly smaller text for mobile
+      }
+    }
+  }
+
+  .pink-line {
+    width: 100%; // Adjust width as needed
+    height: 5px; // Line height
+    background-color: #f06292; // Pink color
+    margin-bottom: 20px; // Space between line and title
+    margin-top: 80px;
+    animation: expandLine 12s ease forwards;
+
+    // Responsive adjustments for mobile
+    @media (max-width: 480px) {
+      margin-top: 40px;
+      margin-bottom: 10px; // Less space for mobile
+    }
+  }
+
+  // General responsive adjustments for the container
+  @media (max-width: 480px) {
+    padding: 10px; // Reduce padding for smaller screens
+
+    h1 {
+      font-size: 1.5em; // Smaller font size for headings
+      &::after {
+        width: 200px; // Adjust line width under h1 for mobile
+      }
+    }
+  }
+}
+
+
