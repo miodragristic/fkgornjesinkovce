@@ -11,17 +11,7 @@
     position: relative;
     padding-bottom: 10px;
 
-    &::after {
-      content: '';
-      display: block;
-      width: 360px; // Adjust width as needed
-      height: 5px;
-      background-color: #f06292; // Pink color
-      position: absolute;
-      bottom: 10px; // Ensure it's in pixels
-      left: 50%;
-      transform: translateX(-50%);
-    }}
+}
 
   .player-cards {
     display: grid;
