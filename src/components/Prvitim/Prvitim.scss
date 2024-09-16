@@ -11,7 +11,8 @@
     position: relative;
     padding-bottom: 10px;
 
-}
+
+    }
 
   .player-cards {
     display: grid;
@@ -45,11 +46,7 @@
     transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease; // Tranzicije za hover efekat
     cursor: pointer;
   
-    &:hover {
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-      border-color: #f06292; // Promena boje okvira na hover
-      background: $white-color; // Zatamnjenje sa poluprozirnom crnom bojom na hover
-    }
+ 
   
     img {
       width: 100%;
@@ -120,5 +117,7 @@
       animation: expandLine 12s ease forwards;
     }
   }
+
+
 
 
