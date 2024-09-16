@@ -21,9 +21,10 @@ const players = [
   { name: 'Stefan Pavlović', number: 4, img: Logo },
   { name: 'Ivan Dimitrijević', number: 5, img: Duki },
   { name: 'Bojan Veličković', number: 6, img: Logo },
-  { name: 'Danijel Kostić', number: 7, img: Ranko },
+  { name: 'Danijel Kostić', number: 7, img: Daka },
   { name: 'Zdravković Aleksandar', number: 8, img: Logo },
-  { name: 'Mihajlo Jovanović', number: 9, img: Sergej },
+  { name: 'Mihajlo Jovanović', number: 9, img: Logo },
+  { name: 'Saša Đorđević', number: 10, img: Prca },
   { name: 'Milan Denić', number: 11, img: Logo },
   { name: 'Miodrag Ristić', number: 13, img: Logo },
   { name: 'Miljan Stanković', number: 14, img: Logo },
@@ -31,10 +32,12 @@ const players = [
   { name: 'Miloš Veličković', number: 16, img: Logo },
   { name: 'Miloš Stamenković', number: 17, img: Logo },
   { name: 'Igor Antić', number: 18, img: Logo },
-  { name: 'Nikola Grozdanović', number: 19, img: Logo },
-  { name: 'Milan Mihajlović', number: 20, img: Logo },
-  { name: 'Lazar Petrović', number: 21, img: Logo },
-  { name: 'Miroslav Đorić', number: 22, img: Kica },
+  { name: 'Ranko Veličković', number: 19, img: Ranko },
+  { name: 'Dejan Stojković', number: 19, img: Dzemko },
+  { name: 'Nikola Grozdanović', number: 21, img: Logo },
+  { name: 'Milan Mihajlović', number: 22, img: Logo },
+  { name: 'Lazar Petrović', number: 23, img: Logo },
+  { name: 'Miroslav Đorić', number: 24, img: Kica },
 ];
 
 const Prvitim = () => {
@@ -60,3 +63,4 @@ const Prvitim = () => {
 };
 
 export default Prvitim;
+
