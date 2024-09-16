@@ -33,11 +33,13 @@ const players = [
   { name: 'Miloš Stamenković', number: 17, img: Logo },
   { name: 'Igor Antić', number: 18, img: Logo },
   { name: 'Ranko Veličković', number: 19, img: Ranko },
+  { name: 'Miloš Sokolović', number: 20, img: Logo },
   { name: 'Dejan Stojković', number: 19, img: Dzemko },
   { name: 'Nikola Grozdanović', number: 21, img: Logo },
   { name: 'Milan Mihajlović', number: 22, img: Logo },
   { name: 'Lazar Petrović', number: 23, img: Logo },
   { name: 'Miroslav Đorić', number: 24, img: Kica },
+  { name: 'Saša Pešić', number: 25, img: Logo },
 ];
 
 const Prvitim = () => {
@@ -63,4 +65,5 @@ const Prvitim = () => {
 };
 
 export default Prvitim;
+
 
