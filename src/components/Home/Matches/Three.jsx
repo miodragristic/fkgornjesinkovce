@@ -24,7 +24,7 @@ const Two = () => {
         </div>
         <div className="match-center">
           <span className="match-date">{matchDetails.date}</span>
-          <span className="vs">vs</span>
+          <span className="vs">0 x 4</span>
           <span className="stadium">{matchDetails.stadium}</span>
           <span className="league">{matchDetails.league}</span>
         </div>
