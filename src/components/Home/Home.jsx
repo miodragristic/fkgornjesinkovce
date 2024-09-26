@@ -131,31 +131,6 @@ const Home = () => {
   const matchData = [
     {
       "id": 1,
-      "date": "08 Sep 2024 11:00 AM",
-      "homeTeam": "Gornje Sinkovce",
-      "homeLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
-      "awayTeam": "Rudar",
-      "awayLogo": Rudar, // Dodajte ovde logo domaćeg tima
-      "stadium": "Omladinac, Donje Sinkovce",
-      "homeResult": "1",
-      "awayResult": "1", 
-      "league": "GRADSKA LIGA LESKOVAC",
-      "link": "/one"
-    },
-    {
-      "id": 2,
-      "date": "15 Sep 2024 11:00 AM",
-      "homeTeam": "Todorovce",
-      "homeLogo": Todorovce, // Dodajte ovde logo domaćeg tima
-      "awayTeam": "Gornje Sinkovce",
-      "awayLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
-      "stadium": "Todorovce",
-      "homeResult": "3",
-      "awayResult": "0", 
-      "link": "/two"
-    },
-    {
-      "id": 3,
       "date": "22 Sep 2024 11:00 AM",
       "homeTeam": "Gornje Sinkovce",
       "homeLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
@@ -168,7 +143,7 @@ const Home = () => {
       "link": "/three"
     },    
     {
-      "id": 4,
+      "id": 2,
       "date": "29 Sep 2024 11:00 AM",
       "homeTeam": "Marjan MB",
       "homeLogo": Marjan, // Dodajte ovde logo domaćeg tima
@@ -179,7 +154,7 @@ const Home = () => {
       "link": "/four"
     },
     {
-      "id": 5,
+      "id": 3,
       "date": "06 Okt 2024 11:00 AM",
       "homeTeam": "Gornje Sinkovce",
       "homeLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
@@ -192,7 +167,7 @@ const Home = () => {
       "link": "/five"
     },
     {
-      "id": 6,
+      "id": 4,
       "date": "12 Okt 2024 05:00 PM",
       "homeTeam": "Građanski 2023",
       "homeLogo": Gradjanski, // Dodajte ovde logo domaćeg tima
@@ -202,7 +177,7 @@ const Home = () => {
       "link": "/six"
     },
     {
-      "id": 7,
+      "id": 5,
       "date": "27 Okt 2024 11:00 AM",
       "homeTeam": "Gornje Sinkovce",
       "homeLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
@@ -213,7 +188,7 @@ const Home = () => {
       "link": "/seven"
     },    
     {
-      "id": 8,
+      "id": 6,
       "date": "02 Nov 2024 04:00 PM",
       "homeTeam": "Mladost D. Lokošnica",
       "homeLogo": Dl, // Dodajte ovde logo domaćeg tima
@@ -222,6 +197,31 @@ const Home = () => {
       "stadium": "Donja Lokošnica",
       "kickoff": "04:00 PM",
       "link": "/eight"
+    },
+      {
+      "id": 7,
+      "date": "08 Sep 2024 11:00 AM",
+      "homeTeam": "Gornje Sinkovce",
+      "homeLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
+      "awayTeam": "Rudar",
+      "awayLogo": Rudar, // Dodajte ovde logo domaćeg tima
+      "stadium": "Omladinac, Donje Sinkovce",
+      "homeResult": "1",
+      "awayResult": "1", 
+      "league": "GRADSKA LIGA LESKOVAC",
+      "link": "/one"
+    },
+    {
+      "id": 8,
+      "date": "15 Sep 2024 11:00 AM",
+      "homeTeam": "Todorovce",
+      "homeLogo": Todorovce, // Dodajte ovde logo domaćeg tima
+      "awayTeam": "Gornje Sinkovce",
+      "awayLogo": Logofkgs, // Dodajte ovde logo domaćeg tima
+      "stadium": "Todorovce",
+      "homeResult": "3",
+      "awayResult": "0", 
+      "link": "/two"
     },
   ];
   const latestNews = [
