@@ -162,6 +162,8 @@ const Home = () => {
       "awayTeam": "Mladost Kutleš",
       "awayLogo": Kutles, // Dodajte ovde logo domaćeg tima
       "stadium": "Omladinac, Donje Sinkovce",
+      "homeResult": "0",
+      "awayResult": "4", 
       "kickoff": "11:00",
       "link": "/three"
     },    
